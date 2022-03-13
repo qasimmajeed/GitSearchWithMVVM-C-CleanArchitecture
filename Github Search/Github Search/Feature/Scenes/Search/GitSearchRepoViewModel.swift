@@ -8,7 +8,7 @@
 import Domain
 import Combine
 
-protocol GitSearchRepoNavigator: class {
+protocol GitSearchRepoNavigator: AnyObject {
     func showRepositoryBranches(repository: Repository)
 }
 
@@ -22,7 +22,7 @@ enum GitSearchViewModelState {
 final class GitSearchRepoViewModel {
     // MARK: - Private Properties
     private var repositories: [Repository] = [Repository]()
-    private let navigator: GitSearchRepoNavigator
+    private weak var navigator: GitSearchRepoNavigator?
     private let useCase: GitSearchUseCaseProtocol
     private let stateDidUpdateSubject = PassthroughSubject<GitSearchViewModelState, Never>()
     private var cancellable: Set<AnyCancellable> = Set<AnyCancellable>()
@@ -78,7 +78,7 @@ final class GitSearchRepoViewModel {
         }
         let repository =  self.repositories[index]
         if repository.branches.count > 0 {
-            navigator.showRepositoryBranches(repository: self.repositories[index])
+            navigator?.showRepositoryBranches(repository: self.repositories[index])
         }
     }
 }
