@@ -1,0 +1,9 @@
+//
+//  Config.xcconfig
+//  Github Search
+//
+//  Created by Qasim Majeed on 27.02.22.
+//
+
+API_URL = api.github.com
+API_TOKEN = token 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
