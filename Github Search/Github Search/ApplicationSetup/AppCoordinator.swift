@@ -14,8 +14,6 @@ final class AppCoordinator: Coordinator {
     // MARK: - Init
     init(window: UIWindow) {
         self.window = window
-        print(kCGImagePropertyExifBrightnessValue)
-        print(kCGImagePropertyExifDictionary)
     }
     
     // MARK: - Coordinator Implementation
