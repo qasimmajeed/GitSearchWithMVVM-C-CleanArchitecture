@@ -21,6 +21,6 @@ public struct DataConstants {
     
     /// Define all the constant data related to api
     public struct APIData {
-        public static let apiToken =  Bundle.main.infoForKey("Api Token") ?? ""
+        public static let apiToken =  "token " + "apend the github token here"
     }
 }
